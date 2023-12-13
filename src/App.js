@@ -3,23 +3,16 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
-export default App;
+      <Router>
+        <div>
+          <Switch>
+            <Route exact path="/" component={BookingList} />
+            <Route path="/book" component={BookingForm} />
+            <Route path="/cancel" component={CancelBookingForm} />
+          </Switch>
+        </div>
+      </Router>
+    );
+  }
+  
+  export default App;
